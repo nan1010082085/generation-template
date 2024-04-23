@@ -1,7 +1,9 @@
 {
   "name": "generation-template",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "静态项目Ts-vue模板生成",
+  "author": "yang dongnan",
+  "license": "MIT",
   "module": "index.mjs",
   "files": [
     "lib",
@@ -19,7 +21,7 @@
     "url": "https://www.npmjs.com/package/generation-template"
   },
   "homepage": {
-    "type": "github",
+    "email": "nan1010082085@163.com",
     "url": "https://github.com/nan1010082085/generation-template"
   },
   "scripts": {
@@ -28,8 +30,6 @@
     "commit": "git cz",
     "release": "standard-version"
   },
-  "author": "yang dong nan",
-  "license": "ISC",
   "dependencies": {
     "commander": "^12.0.0",
     "fs-extra": "^11.2.0",
