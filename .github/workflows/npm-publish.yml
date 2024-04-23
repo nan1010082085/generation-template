@@ -20,7 +20,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     permissions:
-      contents: wirte
+      contents: 'true'
     steps:
       - uses: actions/checkout@v4
         with:
