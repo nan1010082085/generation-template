@@ -17,6 +17,7 @@ jobs:
           node-version: 18.16
 
   auto-commit:
+    needs: build
     runs-on: ubuntu-latest
     permissions:
       contents: wirte
@@ -24,53 +25,19 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
-
-      # - name: 'set git'
-      #   with:
-      #     token: ${{github.token}}
-      #     username: ${{github.actor}}
-
+          
       - run: pnpm install
-      
       - name: 'build'
       - run: pnpm build
-
+      
       - name: 'commit changes'
-        uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: stefanzweifel/git-auto-commit-action@v5
         with: 
           commit_message: "feat(build): build"
           branch: master
-      
-  # release:
-  #   needs: build
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v1
-  #     - uses: actions/setup-node@v1
-  #       with:
-  #         node-version: 18.16
-  #         registry-url: https://registry.npmjs.org/
-  #     - run: pnpm install
-  #     - name: 'Git Configure'
-  #       uses: dawidd6/action-git-user-config@v1.0.0
-  #       with:
-  #         token: ${{github.token}}
-  #         username: ${{github.actor}}
-  #     - run: pnpm build
-  #     - name: 'Commit Build'
-  #       uses: matheusalbino/git-commit@v1.0.1
-  #       with: 
-  #         github-token: ${{github.token}}
-  #         message: 'ci(release): build dist'
-  #     - run: pnpm release
-  #     - name: 'Git Push'
-  #       uses: github-actions-x/commit@v2.8
-  #       with:
-  #         github-token: ${{github.token}}
-  #         push-branch: master
 
   publish-npm:
-    needs: release
+    needs: auto-commit
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
