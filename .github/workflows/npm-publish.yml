@@ -4,8 +4,8 @@
 name: generation-tempalte Package
 
 on:
-  release:
-    types: [created]
+  push:
+    branches: master
 
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 18.16
 
- release:
+  release:
     needs: build
     runs-on: ubuntu-latest
     steps:
