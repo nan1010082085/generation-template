@@ -1,6 +1,6 @@
 {
   "name": "generation-template",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "静态项目Ts-vue模板生成",
   "module": "index.mjs",
   "files": [
