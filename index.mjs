@@ -1,12 +1,13 @@
+#!/usr/bin/env node
 import { Command } from 'commander';
 import { red, gray } from 'kolorist';
 import { TEMPLATE_FILE } from './lib/constant.mjs';
 import { run } from './lib/rw.mjs';
 
 const { log, error } = console;
-const program = new Command('cm');
+const program = new Command('gt');
 
-program.name('cm').description('创建通用项目模板').version('1.0.0').usage('<command> [options]');
+program.name('gt').description('创建通用项目模板').version('1.0.0').usage('<command> [options]');
 
 // create command
 const makeCreateCommand = () => {

@@ -5,6 +5,7 @@
   "module": "index.mjs",
   "files": [
     "lib",
+    "node_modules",
     "packages",
     "index.mjs",
     "package.json",
@@ -24,11 +25,9 @@
   "dependencies": {
     "commander": "^12.0.0",
     "fs-extra": "^11.2.0",
-    "inquirer": "^9.2.19",
-    "zx": "^8.0.2"
+    "inquirer": "^9.2.19"
   },
   "devDependencies": {
-    "@types/node": "^20.12.7",
     "commitizen": "^4.3.0",
     "cz-git": "^1.9.1",
     "kolorist": "^1.8.0",

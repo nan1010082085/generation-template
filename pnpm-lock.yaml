@@ -14,14 +14,8 @@ dependencies:
   inquirer:
     specifier: ^9.2.19
     version: 9.2.19
-  zx:
-    specifier: ^8.0.2
-    version: 8.0.2
 
 devDependencies:
-  '@types/node':
-    specifier: ^20.12.7
-    version: 20.12.7
   commitizen:
     specifier: ^4.3.0
     version: 4.3.0(@types/node@20.12.7)(typescript@5.4.5)
@@ -153,23 +147,6 @@ packages:
     dev: true
     optional: true
 
-  /@types/fs-extra@11.0.4:
-    resolution: {integrity: sha512-yTbItCNreRooED33qjunPthRcSjERP1r4MqCZc7wv0u2sUkzTFp45tgUfS5+r7FrZPdmCCNflLhVSP/o+SemsQ==}
-    requiresBuild: true
-    dependencies:
-      '@types/jsonfile': 6.1.4
-      '@types/node': 20.12.7
-    dev: false
-    optional: true
-
-  /@types/jsonfile@6.1.4:
-    resolution: {integrity: sha512-D5qGUYwjvnNNextdU59/+fI+spnwtTFmyQP0h+PfIOSkNfpU6AOICUOkm4i0OnSk+NyjdPJrxCDro0sJsWlRpQ==}
-    requiresBuild: true
-    dependencies:
-      '@types/node': 20.12.7
-    dev: false
-    optional: true
-
   /@types/minimist@1.2.5:
     resolution: {integrity: sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==}
     dev: true
@@ -179,6 +156,8 @@ packages:
     requiresBuild: true
     dependencies:
       undici-types: 5.26.5
+    dev: true
+    optional: true
 
   /@types/normalize-package-data@2.4.4:
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -2171,6 +2150,8 @@ packages:
   /undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
     requiresBuild: true
+    dev: true
+    optional: true
 
   /universalify@2.0.1:
     resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
@@ -2273,12 +2254,3 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
-
-  /zx@8.0.2:
-    resolution: {integrity: sha512-3g+ePtPYmyrjRuASlJiUhkje1je4a47woML/fzTKBb9PA5BzRQbSswwyJ8nlFWJjA1ORRi6TMyAdhuz/jK+Gaw==}
-    engines: {node: '>= 16.0.0'}
-    hasBin: true
-    optionalDependencies:
-      '@types/fs-extra': 11.0.4
-      '@types/node': 20.12.7
-    dev: false
