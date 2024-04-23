@@ -2,10 +2,24 @@
   "name": "generation-template",
   "version": "1.0.0",
   "description": "静态项目Ts-vue模板生成",
-  "main": "index.mjs",
+  "main": "./dist/cm.mjs",
+  "module": "./dist/cm.mjs",
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/cm.mjs",
+      "require": "./dist/cm.js"
+    }
+  },
   "scripts": {
     "dev": "node index.mjs",
-    "commit": "git cz"
+    "build": "vite build",
+    "commit": "git cz",
+    "release": "standard-version"
   },
   "author": "yang dong nan",
   "license": "ISC",
@@ -16,10 +30,15 @@
     "zx": "^8.0.2"
   },
   "devDependencies": {
+    "@types/node": "^20.12.7",
     "commitizen": "^4.3.0",
     "cz-git": "^1.9.1",
     "kolorist": "^1.8.0",
-    "ora": "^8.0.1"
+    "ora": "^8.0.1",
+    "standard-version": "^9.5.0",
+    "vite": "^5.2.10",
+    "vite-plugin-copy": "^0.1.6",
+    "vite-plugin-node-polyfills": "^0.21.0"
   },
   "config": {
     "commitizen": {
