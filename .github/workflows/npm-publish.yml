@@ -16,35 +16,36 @@ jobs:
         with:
           node-version: 20
 
-  auto-commit:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      # 允许写入仓库内容
-      contents: write
-      # 允许创建和更新拉取请求
-      pull-requests: write
-    steps:
-        # 获取仓库内容
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref }}
-        # 安装pnpm 并打包
-      - name: 'install'  
-        run: |
-          npm install pnpm -g
-          pnpm install
-      - name: 'build'
-        run: pnpm build
+  # auto-commit:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   permissions:
+  #     # 允许写入仓库内容
+  #     contents: write
+  #     # 允许创建和更新拉取请求
+  #     pull-requests: write
+  #   steps:
+  #       # 获取仓库内容
+  #     - uses: actions/checkout@v4
+  #       with:
+  #         ref: ${{ github.head_ref }}
+  #       # 安装pnpm 并打包
+  #     - name: 'install'  
+  #       run: |
+  #         npm install pnpm -g
+  #         pnpm install
+  #     - name: 'build'
+  #       run: pnpm build
       
-      - name: 'commit changes'
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with: 
-          commit_message: "feat(build): build"
-          branch: master
+  #     - name: 'commit changes'
+  #       uses: stefanzweifel/git-auto-commit-action@v5
+  #       with: 
+  #         commit_message: "feat(build): build"
+  #         branch: master
 
   publish-npm:
-    needs: auto-commit
+    # needs: auto-commit
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

@@ -2,18 +2,16 @@
   "name": "generation-template",
   "version": "1.0.0",
   "description": "静态项目Ts-vue模板生成",
-  "main": "./dist/cm.mjs",
-  "module": "./dist/cm.mjs",
+  "module": "index.mjs",
   "files": [
-    "dist",
+    "lib",
+    "packages",
+    "index.mjs",
     "package.json",
     "README.md"
   ],
-  "exports": {
-    ".": {
-      "import": "./dist/cm.mjs",
-      "require": "./dist/cm.js"
-    }
+  "bin": {
+    "gt": "./index.mjs"
   },
   "scripts": {
     "dev": "node index.mjs",
@@ -45,5 +43,9 @@
       "path": "node_modules/cz-git",
       "czConfig": "./cz.config.js"
     }
+  },
+  "engines": {
+    "node": ">=18.16.0",
+    "pnpm": ">=8.7.0"
   }
 }
