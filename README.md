@@ -11,7 +11,13 @@
 
 ```js
   // 使用gt create 创建项目
-  gt create <my-project> [(template-element-ts|element-ts)]
+  gt create <my-project> [template]
+```
+### [template]
+
+```text
+
+template-element-ts | element-ts
 ```
 
 ### 示例
