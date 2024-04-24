@@ -16,14 +16,15 @@
   "bin": {
     "gt": "./index.mjs"
   },
+  "keywords": [
+    "tempalte",
+    "gt"
+  ],
   "repository": {
     "type": "npm",
     "url": "https://www.npmjs.com/package/generation-template"
   },
-  "homepage": {
-    "email": "nan1010082085@163.com",
-    "url": "https://github.com/nan1010082085/generation-template"
-  },
+  "homepage": "https://github.com/nan1010082085/generation-template#readme",
   "scripts": {
     "dev": "node index.mjs",
     "build": "vite build",
