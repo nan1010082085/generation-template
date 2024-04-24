@@ -4,7 +4,7 @@
 name: generation-tempalte Package
 
 on:
-  push:
+  release:
     branches: master
 
 jobs:
