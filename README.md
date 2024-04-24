@@ -27,4 +27,4 @@
 
 > `gt -h`
 
-![Examples gt](assets/image.png)
+![Examples gt](./assets/image.png)
