@@ -16,8 +16,7 @@
 ### [template]
 
 ```text
-
-template-element-ts | element-ts
+  template-element-ts | element-ts
 ```
 
 ### 示例
