@@ -1,5 +1,7 @@
 # Generation Template
 
+快捷生成基础项目代码，使用vite作为开发服务
+
 ## 安装
 
 ```js
@@ -16,7 +18,9 @@
 ### [template]
 
 ```text
-  template-element-ts | element-ts
+1. template-element-ts | element-ts
+    | 预置 element-plus | pinia | vue | vue-router
+    | 集成 cz-git(commit提交规范) | sass(css编译) | vitest(测试工具)
 ```
 
 ### 示例
