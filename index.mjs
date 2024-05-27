@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
-import { red, gray } from 'kolorist';
+import { red, gray, blue } from 'kolorist';
 import { TEMPLATE_FILE } from './lib/constant.mjs';
 import { run } from './lib/rw.mjs';
-import { blue } from 'kolorist';
 
 const { log, error } = console;
 const program = new Command('gt');
