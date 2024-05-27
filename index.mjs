@@ -3,6 +3,7 @@ import { Command } from 'commander';
 import { red, gray } from 'kolorist';
 import { TEMPLATE_FILE } from './lib/constant.mjs';
 import { run } from './lib/rw.mjs';
+import { blue } from 'kolorist';
 
 const { log, error } = console;
 const program = new Command('gt');
@@ -15,14 +16,19 @@ const makeCreateCommand = () => {
   programCreate
     .description('Rely on [template] to generate <filename> projects ')
     .argument('<filename>', '文件名')
-    .argument('[template]', '模板名', 'template-element-ts')
+    .argument('[template]', '模板名')
     .action((filename, template) => {
       // 检测 template 模板名是否存在
       // 调用 run 生成 filename
-      let isExist = TEMPLATE_FILE.find((name) => name.match(template));
+      let temp = template;
+      if (temp === undefined) {
+        log(gray('not input template name is [tmeplate-ts] default'))
+        temp = 'template-ts';
+      }
+      let isExist = TEMPLATE_FILE.find((name) => name.match(temp));
       log(gray(`check template: ${isExist}`));
       if (isExist) {
-        run(isExist, filename);
+        // run(isExist, filename);
       } else {
         error(`${red('template is defined')}`);
       }
@@ -30,6 +36,14 @@ const makeCreateCommand = () => {
   return programCreate;
 };
 
-program.addCommand(makeCreateCommand());
+function makeTemplateListCommand() {
+  const programTemplateList = new Command('temp-list');
+  programTemplateList.description('show template list name').action(() => {
+    log(blue(`${TEMPLATE_FILE.join(' ')}`));
+  });
+  return programTemplateList;
+}
+
+program.addCommand(makeCreateCommand()).addCommand(makeTemplateListCommand());
 
 program.parse(process.argv);

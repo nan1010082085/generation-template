@@ -13,9 +13,6 @@ pnpm = ^8
 package
   | vite
   | vue
-  | vue-router
-  | pinia
-  | eleement-plus
   | sass
   | vitest
 
