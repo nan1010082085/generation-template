@@ -28,7 +28,7 @@ const makeCreateCommand = () => {
       let isExist = TEMPLATE_FILE.find((name) => name.match(temp));
       log(gray(`check template: ${isExist}`));
       if (isExist) {
-        // run(isExist, filename);
+        run(isExist, filename);
       } else {
         error(`${red('template is defined')}`);
       }
