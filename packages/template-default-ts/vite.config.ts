@@ -5,10 +5,8 @@ import JSX from '@vitejs/plugin-vue-jsx';
 import { fileURLToPath, URL } from 'node:url';
 
 import AutoImport from 'unplugin-auto-import/vite';
-import Components from 'unplugin-vue-components/vite';
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 
-const isCustomElementArrys = [];
+// const isCustomElementArrys = [];
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -30,8 +28,7 @@ export default defineConfig({
     JSX({
       // isCustomElement: (tag) => tag && isCustomElementArrys.includes(tag)
     }),
-    AutoImport({ resolvers: [ElementPlusResolver()] }),
-    Components({ resolvers: [ElementPlusResolver()] })
+    AutoImport({  })
   ],
   resolve: {
     alias: {
