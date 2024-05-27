@@ -21,8 +21,8 @@ const makeCreateCommand = () => {
       // 调用 run 生成 filename
       let temp = template;
       if (temp === undefined) {
-        log(gray('not input template name is [tmeplate-ts] default'))
-        temp = 'template-ts';
+        log(gray('not input template name is [tmeplate-default-ts] default'))
+        temp = 'template-default-ts';
       }
       let isExist = TEMPLATE_FILE.find((name) => name.match(temp));
       log(gray(`check template: ${isExist}`));
