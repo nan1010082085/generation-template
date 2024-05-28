@@ -3,11 +3,12 @@ import { Command } from 'commander';
 import { red, gray, blue } from 'kolorist';
 import { TEMPLATE_FILE } from './lib/constant.mjs';
 import { run } from './lib/rw.mjs';
+import { pVersion } from './lib/utils.mjs';
 
 const { log, error } = console;
 const program = new Command('gt');
 
-program.name('gt').description('创建通用项目模板').version('1.0.0').usage('<command> [options]');
+program.name('gt').description('创建通用项目模板').version(pVersion()).usage('<command> [options]');
 
 // create command
 const makeCreateCommand = () => {
@@ -21,7 +22,7 @@ const makeCreateCommand = () => {
       // 调用 run 生成 filename
       let temp = template;
       if (temp === undefined) {
-        log(gray('not input template name is [tmeplate-default-ts] default'))
+        log(gray('not input template name is [tmeplate-default-ts] default'));
         temp = 'template-default-ts';
       }
       let isExist = TEMPLATE_FILE.find((name) => name.match(temp));
